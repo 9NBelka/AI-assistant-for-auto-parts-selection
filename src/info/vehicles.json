@@ -1,0 +1,152 @@
+[
+  {
+    "year": 2010,
+    "brand": "Toyota",
+    "model": "Corolla"
+  },
+  {
+    "year": 2015,
+    "brand": "Toyota",
+    "model": "Camry"
+  },
+  {
+    "year": 2020,
+    "brand": "Toyota",
+    "model": "RAV4"
+  },
+  {
+    "year": 2012,
+    "brand": "Honda",
+    "model": "Civic"
+  },
+  {
+    "year": 2018,
+    "brand": "Honda",
+    "model": "Accord"
+  },
+  {
+    "year": 2021,
+    "brand": "Honda",
+    "model": "CR-V"
+  },
+  {
+    "year": 2014,
+    "brand": "BMW",
+    "model": "X3"
+  },
+  {
+    "year": 2019,
+    "brand": "BMW",
+    "model": "X5"
+  },
+  {
+    "year": 2022,
+    "brand": "BMW",
+    "model": "3 Series"
+  },
+  {
+    "year": 2013,
+    "brand": "Audi",
+    "model": "A4"
+  },
+  {
+    "year": 2017,
+    "brand": "Audi",
+    "model": "Q5"
+  },
+  {
+    "year": 2021,
+    "brand": "Audi",
+    "model": "A6"
+  },
+  {
+    "year": 2011,
+    "brand": "Ford",
+    "model": "Focus"
+  },
+  {
+    "year": 2016,
+    "brand": "Ford",
+    "model": "Fusion"
+  },
+  {
+    "year": 2020,
+    "brand": "Ford",
+    "model": "Escape"
+  },
+  {
+    "year": 2010,
+    "brand": "Mercedes-Benz",
+    "model": "C-Class"
+  },
+  {
+    "year": 2018,
+    "brand": "Mercedes-Benz",
+    "model": "E-Class"
+  },
+  {
+    "year": 2022,
+    "brand": "Mercedes-Benz",
+    "model": "GLC"
+  },
+  {
+    "year": 2014,
+    "brand": "Nissan",
+    "model": "Altima"
+  },
+  {
+    "year": 2018,
+    "brand": "Nissan",
+    "model": "Rogue"
+  },
+  {
+    "year": 2021,
+    "brand": "Nissan",
+    "model": "Qashqai"
+  },
+  {
+    "year": 2012,
+    "brand": "Hyundai",
+    "model": "Elantra"
+  },
+  {
+    "year": 2017,
+    "brand": "Hyundai",
+    "model": "Tucson"
+  },
+  {
+    "year": 2022,
+    "brand": "Hyundai",
+    "model": "Santa Fe"
+  },
+  {
+    "year": 2011,
+    "brand": "Kia",
+    "model": "Rio"
+  },
+  {
+    "year": 2016,
+    "brand": "Kia",
+    "model": "Sportage"
+  },
+  {
+    "year": 2020,
+    "brand": "Kia",
+    "model": "Sorento"
+  },
+  {
+    "year": 2013,
+    "brand": "Mazda",
+    "model": "Mazda3"
+  },
+  {
+    "year": 2019,
+    "brand": "Mazda",
+    "model": "CX-5"
+  },
+  {
+    "year": 2021,
+    "brand": "Mazda",
+    "model": "Mazda6"
+  }
+]

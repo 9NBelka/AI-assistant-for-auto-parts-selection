@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Oil Filter",
+    "price": 15,
+    "producer": "Bosch",
+    "rating": 4.7
+  },
+  {
+    "id": 2,
+    "name": "Brake Pads",
+    "price": 45,
+    "producer": "Brembo",
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "name": "Air Filter",
+    "price": 20,
+    "producer": "Mann",
+    "rating": 4.6
+  },
+  {
+    "id": 4,
+    "name": "Spark Plug",
+    "price": 12,
+    "producer": "NGK",
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "name": "Battery",
+    "price": 120,
+    "producer": "Varta",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "name": "Headlight Bulb",
+    "price": 18,
+    "producer": "Philips",
+    "rating": 4.5
+  },
+  {
+    "id": 7,
+    "name": "Cabin Filter",
+    "price": 25,
+    "producer": "Mahle",
+    "rating": 4.6
+  },
+  {
+    "id": 8,
+    "name": "Brake Disc",
+    "price": 80,
+    "producer": "Brembo",
+    "rating": 4.9
+  },
+  {
+    "id": 9,
+    "name": "Fuel Pump",
+    "price": 150,
+    "producer": "Delphi",
+    "rating": 4.4
+  },
+  {
+    "id": 10,
+    "name": "Radiator",
+    "price": 200,
+    "producer": "Denso",
+    "rating": 4.7
+  },
+  {
+    "id": 11,
+    "name": "Alternator",
+    "price": 250,
+    "producer": "Bosch",
+    "rating": 4.8
+  },
+  {
+    "id": 12,
+    "name": "Starter Motor",
+    "price": 180,
+    "producer": "Valeo",
+    "rating": 4.6
+  },
+  {
+    "id": 13,
+    "name": "Timing Belt",
+    "price": 60,
+    "producer": "ContiTech",
+    "rating": 4.7
+  },
+  {
+    "id": 14,
+    "name": "Water Pump",
+    "price": 75,
+    "producer": "GMB",
+    "rating": 4.5
+  },
+  {
+    "id": 15,
+    "name": "Shock Absorber",
+    "price": 110,
+    "producer": "KYB",
+    "rating": 4.7
+  },
+  {
+    "id": 16,
+    "name": "Wiper Blades",
+    "price": 22,
+    "producer": "Bosch",
+    "rating": 4.4
+  },
+  {
+    "id": 17,
+    "name": "Clutch Kit",
+    "price": 260,
+    "producer": "LUK",
+    "rating": 4.8
+  },
+  {
+    "id": 18,
+    "name": "Exhaust Pipe",
+    "price": 140,
+    "producer": "Walker",
+    "rating": 4.3
+  },
+  {
+    "id": 19,
+    "name": "Catalytic Converter",
+    "price": 320,
+    "producer": "Bosal",
+    "rating": 4.2
+  },
+  {
+    "id": 20,
+    "name": "Drive Belt",
+    "price": 35,
+    "producer": "Gates",
+    "rating": 4.6
+  }
+]
