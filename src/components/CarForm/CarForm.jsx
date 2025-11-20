@@ -66,7 +66,7 @@ export default function CarForm() {
 
     const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
-    console.log(apiKey); // должен выводиться твой ключ
+    console.log(apiKey);
 
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
