@@ -190,3 +190,72 @@
   text-decoration: underline;
   font-weight: 500;
 }
+
+.bestChoiceBadge {
+  background: #28a745;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.whyBest {
+  background: #d4edda;
+  color: #155724;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  margin: 8px 0;
+  border-left: 4px solid #28a745;
+}
+
+.shops {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shopRow {
+  display: grid;
+  grid-template-columns: 1fr 80px auto 70px;
+  align-items: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.95em;
+  &.outOfStock {
+    opacity: 0.6;
+  }
+}
+
+.shopName {
+  font-weight: 500;
+}
+.shopPrice {
+  text-align: right;
+  font-size: 1.1em;
+}
+.shopLink {
+  color: #007bff;
+  text-decoration: underline;
+}
+.delivery {
+  font-size: 0.8em;
+  color: #666;
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .shopRow {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 4px;
+  }
+  .shopPrice,
+  .delivery {
+    text-align: left;
+  }
+}
