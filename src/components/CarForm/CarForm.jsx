@@ -17,6 +17,7 @@ export default function CarForm() {
   const [recommendedParts, setRecommendedParts] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  /* ---- ФИЛЬТР ---- */
   const filteredBrands = useMemo(
     () =>
       brands
@@ -24,7 +25,6 @@ export default function CarForm() {
         .filter((name) => name.toLowerCase().startsWith(searchBrand.toLowerCase())),
     [searchBrand, brands],
   );
-
   const filteredModels = useMemo(() => {
     if (!selectedBrand) return [];
     const brand = brands.find((b) => b.name === selectedBrand);
@@ -34,7 +34,6 @@ export default function CarForm() {
           .filter((m) => m.toLowerCase().startsWith(searchModel.toLowerCase()))
       : [];
   }, [searchModel, selectedBrand, brands]);
-
   const filteredYears = useMemo(() => {
     if (!selectedBrand || !selectedModel) return [];
     const brand = brands.find((b) => b.name === selectedBrand);
@@ -45,6 +44,7 @@ export default function CarForm() {
     return years.filter((y) => y.toString().startsWith(searchYear));
   }, [searchYear, selectedBrand, selectedModel, brands]);
 
+  /* ---- ОТПРАВКА ПРОБЛЕМЫ В AI ---- */
   const handleSubmit = async () => {
     if (!selectedBrand || !selectedModel || !selectedYear || !problem) return;
 
@@ -81,11 +81,12 @@ export default function CarForm() {
       const data = await response.json();
       const text = data.choices[0].message.content;
 
+      // Пытаемся распарсить JSON
       let parts = [];
       try {
         parts = JSON.parse(text);
       } catch {
-        console.warn('Не удалось распарсить JSON, вернулось raw:', text);
+        console.log('Не удалось распарсить JSON, вернулось raw:', text);
       }
 
       setRecommendedParts(parts);
@@ -99,7 +100,7 @@ export default function CarForm() {
 
   return (
     <div className={styles.container}>
-      {/* --- МАРКА --- */}
+      {/* --- ВЫБОР МАРКИ --- */}
       <div className={styles.field}>
         <label className={styles.label}>Марка автомобіля</label>
         <input
@@ -113,23 +114,25 @@ export default function CarForm() {
           placeholder='Введи марку...'
           className={styles.input}
         />
-        {searchBrand && !selectedBrand && (
-          <div className={styles['dropdown-list']}>
-            {filteredBrands.map((b, i) => (
-              <div
-                key={i}
-                className={styles['dropdown-item']}
-                onClick={() => {
-                  setSelectedBrand(b);
-                  setSearchBrand(b);
-                  setSelectedModel(null);
-                  setSelectedYear(null);
-                }}>
-                {b}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className={styles.dropdown}>
+          {searchBrand && !selectedBrand && (
+            <div className={styles['dropdown-list']}>
+              {filteredBrands.map((b, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelectedBrand(b);
+                    setSearchBrand(b);
+                    setSelectedModel(null);
+                    setSelectedYear(null);
+                  }}
+                  className={styles['dropdown-item']}>
+                  {b}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* --- МОДЕЛЬ --- */}
@@ -146,22 +149,24 @@ export default function CarForm() {
           className={styles.input}
           disabled={!selectedBrand}
         />
-        {searchModel && !selectedModel && (
-          <div className={styles['dropdown-list']}>
-            {filteredModels.map((m, i) => (
-              <div
-                key={i}
-                className={styles['dropdown-item']}
-                onClick={() => {
-                  setSelectedModel(m);
-                  setSearchModel(m);
-                  setSelectedYear(null);
-                }}>
-                {m}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className={styles.dropdown}>
+          {searchModel && !selectedModel && (
+            <div className={styles['dropdown-list']}>
+              {filteredModels.map((m, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelectedModel(m);
+                    setSearchModel(m);
+                    setSelectedYear(null);
+                  }}
+                  className={styles['dropdown-item']}>
+                  {m}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* --- ГОД --- */}
@@ -177,24 +182,26 @@ export default function CarForm() {
           className={styles.input}
           disabled={!selectedModel}
         />
-        {searchYear && !selectedYear && (
-          <div className={styles['dropdown-list']}>
-            {filteredYears.map((y, i) => (
-              <div
-                key={i}
-                className={styles['dropdown-item']}
-                onClick={() => {
-                  setSelectedYear(y);
-                  setSearchYear(y.toString());
-                }}>
-                {y}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className={styles.dropdown}>
+          {searchYear && !selectedYear && (
+            <div className={styles['dropdown-list']}>
+              {filteredYears.map((y, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setSelectedYear(y);
+                    setSearchYear(y.toString());
+                  }}
+                  className={styles['dropdown-item']}>
+                  {y}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* --- ПРОБЛЕМА --- */}
+      {/* --- ОПИСАНИЕ ПРОБЛЕМЫ --- */}
       <div className={styles.field}>
         <label className={styles.label}>Опис проблеми</label>
         <textarea
@@ -205,12 +212,12 @@ export default function CarForm() {
         />
       </div>
 
-      {/* --- КНОПКА --- */}
+      {/* --- КНОПКА ОТПРАВКИ --- */}
       <button onClick={handleSubmit} className={styles.submitButton} disabled={loading}>
         {loading ? 'Обработка...' : 'Подобрать запчасти'}
       </button>
 
-      {/* --- РЕЗУЛЬТАТ --- */}
+      {/* --- ВЫВОД РЕЗУЛЬТАТА --- */}
       {recommendedParts.length > 0 && (
         <div className={styles.result}>
           <h3>Возможные запчасти:</h3>
