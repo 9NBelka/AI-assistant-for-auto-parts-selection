@@ -64,12 +64,16 @@ export default function CarForm() {
 ]
 `;
 
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
+    console.log(apiKey); // должен выводиться твой ключ
+
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
           model: 'gpt-4',
