@@ -147,7 +147,7 @@ export default function CarForm() {
                 </div>
               )}
             </div>
-            {selectedBrand && <div className={styles.selected}>Выбрано: {selectedBrand}</div>}
+            {/* {selectedBrand && <div className={styles.selected}>Вибрано: {selectedBrand}</div>} */}
           </div>
 
           <div className={styles.field}>
@@ -181,7 +181,7 @@ export default function CarForm() {
                 </div>
               )}
             </div>
-            {selectedModel && <div className={styles.selected}>Выбрано: {selectedModel}</div>}
+            {/* {selectedModel && <div className={styles.selected}>Вибрано: {selectedModel}</div>} */}
           </div>
 
           <div className={styles.field}>
@@ -213,7 +213,7 @@ export default function CarForm() {
                 </div>
               )}
             </div>
-            {selectedYear && <div className={styles.selected}>Выбрано: {selectedYear}</div>}
+            {/* {selectedYear && <div className={styles.selected}>Выбрано: {selectedYear}</div>} */}
           </div>
 
           <div className={styles.field}>
@@ -221,14 +221,14 @@ export default function CarForm() {
             <textarea
               value={problem}
               onChange={(e) => setProblem(e.target.value)}
-              placeholder='Например: машина не заводится, стартер крутит, но не схватывает...'
+              placeholder='Наприклад: машина не заводиться, стартер крутить, але не схоплює.'
               className={styles.textarea}
               rows={5}
             />
           </div>
 
           <button onClick={handleSubmit} className={styles.submitButton} disabled={loading}>
-            {loading ? 'Анализируем...' : 'Получить диагностику и запчасти'}
+            {loading ? 'Аналізуємо...' : 'Отримати діагностику та запчастини'}
           </button>
         </div>
 
